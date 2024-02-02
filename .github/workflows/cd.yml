@@ -1,0 +1,19 @@
+name: Automat JS Tools CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  version-increment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+      - run: |
+          git config --global user.name 'Automat CI'
+          git config --global user.email 'info@runautomat.com'
+      - run: npm version patch
+      - run: git push
