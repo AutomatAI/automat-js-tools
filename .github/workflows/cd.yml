@@ -1,20 +1,17 @@
-name: Version Increment
+name: Automat JS Tools CD
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
-  version:
+  version-increment:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-          # token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
       - run: |
           git config --global user.name 'Automat CI'
           git config --global user.email 'info@runautomat.com'
