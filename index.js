@@ -7,9 +7,10 @@
 const winston = require('winston');
 
 
+const format = process.env.NODE_ENV.toLowerCase().includes("prod") ? winston.format.json() : winston.format.cli()
 const logger = winston.createLogger({
     level: 'info',
-    format: winston.format.json(),
+    format: format,
     transports: [
       new winston.transports.Console()
     ]
