@@ -1,3 +1,5 @@
-declare const logger: winston.logger;
+import type winston from 'winston';
+
+declare const logger: winston.Logger;
 
 export { logger };
