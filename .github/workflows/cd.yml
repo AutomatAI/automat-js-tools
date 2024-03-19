@@ -1,7 +1,6 @@
 name: Automat JS Tools CD
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
