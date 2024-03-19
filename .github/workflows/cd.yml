@@ -1,6 +1,7 @@
 name: Automat JS Tools CD
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -17,3 +18,22 @@ jobs:
           git config --global user.email 'info@runautomat.com'
       - run: npm version patch
       - run: git push
+  publish:
+    runs-on: ubuntu-latest
+    needs: [version-increment]
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v2'
+        with:
+          credentials_json: '${{ secrets.GOOGLE_APP_ENGINE_CREDENTIALS }}'
+
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v2'
+        with:
+          version: '>= 459.0.0'
+      - run: npm run auth
+      - run: npm publish
