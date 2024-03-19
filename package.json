@@ -1,10 +1,11 @@
 {
-  "name": "automat-js-tools",
+  "name": "@automat/automat-js-tools",
   "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "auth": "npx google-artifactregistry-auth"
   },
   "author": "",
   "license": "ISC",
