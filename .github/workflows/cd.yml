@@ -1,6 +1,7 @@
 name: Automat JS Tools CD
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -36,5 +37,6 @@ jobs:
         with:
           version: '>= 459.0.0'
       - run: npm run auth
+      - run: npm install
       - run: npm run build
       - run: npm publish
