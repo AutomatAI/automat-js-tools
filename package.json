@@ -2,14 +2,21 @@
   "name": "@automat/automat-js-tools",
   "version": "1.0.7",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "auth": "npx google-artifactregistry-auth"
+    "auth": "npx google-artifactregistry-auth",
+    "deploy": "npm run auth && npm publish"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "typescript": "^5.4.5",
     "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.10",
+    "tsup": "^8.0.2"
   }
 }
