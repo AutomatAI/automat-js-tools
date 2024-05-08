@@ -12,6 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/storage": "^7.11.0",
+    "@temporalio/client": "^1.9.3",
+    "dotenv": "^16.4.5",
+    "nanoid": "^5.0.7",
     "typescript": "^5.4.5",
     "winston": "^3.11.0"
   },
