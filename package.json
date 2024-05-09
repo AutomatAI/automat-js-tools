@@ -3,8 +3,11 @@
   "version": "1.0.9",
   "description": "",
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf dist/ && tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "auth": "npx google-artifactregistry-auth",
     "deploy": "npm run auth && npm publish"
