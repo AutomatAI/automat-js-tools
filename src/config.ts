@@ -1,7 +1,7 @@
 import os from 'os';
 
 import dotenv from "dotenv";
-import { nanoid } from 'nanoid';
+import { v4 as uuidv4 } from 'uuid';
 
 
 dotenv.config()
@@ -9,7 +9,7 @@ dotenv.config()
 
 let workerId: string | undefined;
 if (!workerId) {
-  workerId = nanoid();
+  workerId = uuidv4().toString();
 }
 
 const generateWorkerName = () => {
